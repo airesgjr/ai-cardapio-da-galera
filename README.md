@@ -98,3 +98,21 @@ Preciso que realize algumas alterações
 -> Ajustar o botão do adicionar participante no evento parou de funcionar
 -> Botão na tela de ingredientes agrupado, botão de "Copiar Web" alterar para "Copiar lista", também ajuste ele, parou de funcionar
 -> Crie um botão para que possa copiar um prato
+
+## Deploy na Vercel
+
+Para colocar o projeto no ar utilizando a Vercel, siga os passos abaixo:
+
+1. Faça o commit e push de todo o código para um repositório no GitHub.
+2. Acesse a [Vercel](https://vercel.com/) e faça login com sua conta.
+3. Clique em **Add New...** > **Project** e importe o seu repositório do GitHub com este projeto.
+4. O framework **Vite** deve ser detectado automaticamente.
+   - O comando de build já configurado será `npm run build`
+   - O diretório de saída será `dist`
+5. Na seção **Environment Variables** (Variáveis de Ambiente), configure as seguintes chaves e seus valores (baseados no seu `.env` local):
+   - `VITE_SUPABASE_URL`
+   - `VITE_SUPABASE_ANON_KEY`
+   - `GEMINI_API_KEY`
+6. Clique em **Deploy** e aguarde o build ser finalizado!
+
+*Nota: O arquivo `vercel.json` já foi criado na raiz do projeto com as regras de roteamento (rewrites) para garantir que a navegação interna do React Router (SPA) funcione corretamente sem apresentar erros 404 ao atualizar a página.*
